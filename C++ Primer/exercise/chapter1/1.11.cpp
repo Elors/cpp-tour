@@ -26,7 +26,8 @@ int main()
     vs = smaller(v1, v2);
     vb = vs + a;
 
-    std::cout << "integers between " << vs << " and " << vb << ": " << std::endl; 
+    std::cout << "integers between " << vs << " and " << vb << ": " << std::endl;
+    
     while (vs <= vb)
     {
         std::cout << vs << ", ";
