@@ -109,4 +109,28 @@ int main()
     constexpr int limit = mf + 1;
 
 
+    /**
+     * 
+     * decltype
+     * 
+    */
+    int i = 42, *p = &i, &r = i;
+    decltype(r + 0) b;
+    decltype(*p) c;     // 错误，decltype(*p)的类型是int&，必须要有初始化值
+    decltype((i)) d;    // 错误，原因同上
+    decltype(i) e;      //  正确，e是一个int变量
+
+
+    /**
+     * 
+     * Struct
+     * 
+    */
+    // struct Sales_data {
+    //     std::string bookNo;
+    //     unsigned units_sold = 0;
+    //     double revenue = 0.;
+    // };
+    
+
 }
