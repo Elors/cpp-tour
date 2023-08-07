@@ -66,6 +66,20 @@ int main()
     v1.size();
     v1.push_back(1);
     v1[0];
+
+
+    /**
+     * iterator
+    */
+    string s("some string");
+    if (s.begin() != s.end())
+    {
+        auto it = s.begin();
+        *it = toupper(*it);
+    }
+
+    for (auto it = s.begin(); it != s.end() && !isspace(*it); ++it)
+        *it = toupper(*it);
 }
 
 /// @brief 将输入的字符串中第一个单词转变为大写
