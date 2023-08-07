@@ -80,6 +80,27 @@ int main()
 
     for (auto it = s.begin(); it != s.end() && !isspace(*it); ++it)
         *it = toupper(*it);
+
+    /**
+     * Array
+    */
+    unsigned cnt = 42;
+    constexpr unsigned sz = 42;
+    int arr[10];
+    int parr[sz];
+    // string bad[cnt];            // error, cnt must be a const variable
+    // string strs[get_size()];    // error, get_size is not a exstexpr ...
+    int ia1[] = {0, 1, 2, 3};
+    // int ia2[] = ia1;             // error, must initialized with a {}
+
+    int *ptrs[10];
+    // int &refs[10] = /***/;
+    int (*Parray)[10] = &arr;
+    int (&arrRef)[10] = arr;
+
+    // array and pointers
+    string nums[] = {"one", "two", "three"};
+    string *p = &nums[0];
 }
 
 /// @brief 将输入的字符串中第一个单词转变为大写
