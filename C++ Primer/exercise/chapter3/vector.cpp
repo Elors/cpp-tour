@@ -178,7 +178,21 @@ void _3_20()
     // part2
     for (size_t i = 0; i < len/2+1; i++)
         cout << iv[i] + iv[len-i] << ", ";
-    cout << endl;
-    
+    cout << endl;    
+}
+
+void _3_41()
+{
+    int arr[] = {0, 1, 2, 3, 4, 5};
+    vector<int> ivec = {begin(arr), end(arr) - 1};
+}
+
+void _3_42()
+{
+    vector<int> ivec{0, 1, 2, 3, 5};
+    const int s = ivec.size();
+    int arr[10];
+    for (size_t i = 0; i < s; ++i)
+        arr[i] = ivec[i];
 }
 

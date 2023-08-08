@@ -8,13 +8,15 @@ void _3_31();
 void _3_32();
 void _3_35();
 void _3_36();
+void _3_43_44();
 
 int main()
 {
     // _3_31();
     // _3_32();
     // _3_35();
-    _3_36();
+    // _3_36();
+    _3_43_44();
 }
 
 void _3_27()
@@ -155,5 +157,64 @@ void _3_36()
     cout << "same!" << endl;
 }
 
+void _3_43_44()
+{
+    int ia[3][4] = {471, 13, 0, 99, 99, 99, 99, 99, 852, 18,76, 1};
+
+    /**
+     * 3.43
+    */
+    // par1
+    cout << "_3_43, output array using range for loop: " << endl;
+    for (int (&a)[4] : ia)
+    {
+        for (int n : a)
+            cout << n << ", ";
+        cout << endl;
+    }
+
+    // part2
+    cout << "_3_43, output array using for loop with [] opt" << endl;
+    for (size_t i = 0; i < 3; ++i)
+    {
+        for (size_t j = 0; j < 4; ++j)
+            cout << ia[i][j] << ", ";
+        cout << endl;
+    }
+
+    // part3
+    cout << "_3_43, output array using for loop with pointers" << endl;
+    for (int (*p1)[4] = ia; p1 != ia + 3; ++p1)
+    {
+        for (int *p2 = *p1; p2 != *p1 + 4; ++p2)
+            cout << *p2 << ", ";
+        cout << endl;
+    }
+
+    /**
+     * 3.44
+    */
+    // part1
+    typedef int (&E4IArray)[4];
+    for (E4IArray a : ia)
+    {
+        for (int n : a)
+            cout << n << ", ";
+        cout << endl;
+    }
+    // part2 ignore
+    // part3
+    typedef int (*P4IArray)[4];
+    for (P4IArray p1 = ia; p1 != ia + 3; ++p1)
+    {
+        for (int *p2 = *p1; p2 != *p1 + 4; ++p2)
+            cout << *p2 << ", ";
+        cout << endl;
+    }
+
+    /**
+     * 3.45 2easy, ignore
+    */
+}
 
 

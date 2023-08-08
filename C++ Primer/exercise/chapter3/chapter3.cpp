@@ -110,7 +110,24 @@ int main()
     char ca[] = {'C', '+', '+'};    // error, must end with a '\0'
     cout << "length of ca is " << strlen(ca) << endl;   // strlen(ca) 返回11，strlen将会持续向前寻找直到遇到'\0'
     string s("hello world!");
+    const char * str = s.c_str();   // use c_str() to get a c style string
 
+    // use array to initial a vector object
+    int int_arr[] = {1, 1, 2};
+    vector<int> ivec(begin(int_arr), end(int_arr));
+
+
+    /**
+     * more about array
+    */
+    int ia[3][4]; // size is 3, each element is a array that contains 4 int value
+    int arr[10][20][30]; // size is 10, each element is a array that contains 20 array, those array contains 30 int value
+    int ia1[3][4] = {
+        {1, 2, 3, 4},
+        {1, 2, 3, 4},
+        {1, 2, 3, 4}
+    };
+    int ia2[3][4] = {1,2,3,4,1,2,3,4,1,2,3,4}; // ia1 and ia2 are the same
 
 }
 
